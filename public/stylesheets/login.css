@@ -1,0 +1,13 @@
+.login-container {
+  height: 70vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+.login-register-form {
+  border: 1px solid #eeeeee;
+  width: 350px;
+  padding: 20px;
+}

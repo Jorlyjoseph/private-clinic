@@ -1,0 +1,8 @@
+.index_body {
+  font-size: 2vh;
+  height: 90vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 213, 170);
+}

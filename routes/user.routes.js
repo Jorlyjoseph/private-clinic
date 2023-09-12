@@ -4,7 +4,13 @@ const User = require('../models/User.model.js');
 
 const saltRounds = 10;
 router.get('/user', (request, response, next) => {
-  response.render('user/index');
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+  response.render('user/index', {
+    userName: request.session.currentUser.username
+  });
 });
 
 router.get('/user/register', (request, response) => {
@@ -86,7 +92,7 @@ router.post('/user/login', (request, response) => {
       return;
     } else if (bcryptjs.compareSync(password, user.password)) {
       request.session.currentUser = user;
-      response.redirect('/user/index');
+      response.redirect('/user');
       return;
     } else {
       response.render('user/login', {
@@ -94,17 +100,6 @@ router.post('/user/login', (request, response) => {
       });
       return;
     }
-  });
-});
-
-router.get('/user/index', (request, response) => {
-  if (!request.session.currentUser) {
-    response.redirect('/user/login');
-    return;
-  }
-
-  response.render('user/index.hbs', {
-    userName: request.session.currentUser.username
   });
 });
 

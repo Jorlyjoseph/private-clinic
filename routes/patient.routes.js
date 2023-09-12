@@ -2,12 +2,20 @@ const router = require('express').Router();
 const Patient = require('../models/Patient.model.js');
 
 router.get('/patient/register', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
   response.render('patient/register');
 });
 
 router.post('/patient/register', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
   const { name, age, address, sex } = request.body;
-  console.log(name, age, address, sex);
   Patient.create({
     name,
     age,
@@ -16,11 +24,14 @@ router.post('/patient/register', (request, response, next) => {
   }).then((newPatient) => {
     response.redirect('/user');
   });
-  // response.send(request.body);
-  // console.log(request.body);
 });
 
 router.get('/patient/all', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
   Patient.find()
     .populate()
     .then((patientsFromDB) => {
@@ -29,6 +40,11 @@ router.get('/patient/all', (request, response, next) => {
 });
 
 router.get('/patient/:id/diagnose', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
   const { id } = request.params;
   Patient.findById(id).then((data) => {
     response.render('patient/diagnose', { data: data });
@@ -36,6 +52,11 @@ router.get('/patient/:id/diagnose', (request, response, next) => {
 });
 
 router.get('/patient/:id/edit', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
   const { id } = request.params;
   Patient.findById(id).then((data) => {
     response.render('patient/edit', { data: data });
@@ -43,6 +64,11 @@ router.get('/patient/:id/edit', (request, response, next) => {
 });
 
 router.post('/patient/:id/edit', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
   const { id } = request.params;
   const { name, age, sex, address } = request.body;
 
@@ -57,6 +83,11 @@ router.post('/patient/:id/edit', (request, response, next) => {
 });
 
 router.get('/patient/:id/delete', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
   const { id } = request.params;
   Patient.findByIdAndDelete(id).then(() => {
     response.redirect('/patient/all');

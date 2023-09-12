@@ -1,7 +1,7 @@
 document.addEventListener(
-  "DOMContentLoaded",
+  'DOMContentLoaded',
   () => {
-    console.log("Private-clinic JS imported successfully!");
+    console.log('private-clinic JS imported successfully!');
   },
   false
 );

@@ -1,7 +1,7 @@
-const session = require("express-session");
-const MongoStore = require("connect-mongo");
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
  module.exports = (app) => {
    // <== app is just a placeholder here
@@ -18,8 +18,8 @@ const mongoose = require("mongoose");
        resave: true,
        saveUninitialized: false,
       cookie: {
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+        secure: process.env.NODE_ENV === 'production',
         httpOnly: true,
          maxAge: 60000 * 10, // 60 * 1000 ms === 1 min
        },

@@ -1,0 +1,7 @@
+.pt-reg-pg {
+  height: 90vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(247, 213, 170);
+}

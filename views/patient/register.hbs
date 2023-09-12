@@ -1,58 +1,60 @@
-<h1>Patient register goes here...</h1>
-<h2>new patients registration form</h2>
+<container class='pt-reg-pg'>
+  <h1>Patient register goes here...</h1>
+  <h2>new patients registration form</h2>
 
-<form class='patients-register-form' action='/patient/register' method='post'>
-  {{#if errorMessage}}
-    <p class='error'>{{errorMessage}}</p>
-  {{/if}}
+  <form class='patients-register-form' action='/patient/register' method='post'>
+    {{#if errorMessage}}
+      <p class='error'>{{errorMessage}}</p>
+    {{/if}}
 
-  <div class='pb-3'>
-    <label for='name' class='form-name'>Name</label>
-    <input
-      type='text'
-      class='form-control'
-      id='name'
-      name='name'
-      {{!-- value='{{name}}' --}}
-    />
+    <div class='pb-3'>
+      <label for='name' class='form-name'>Name</label>
+      <input
+        type='text'
+        class='form-control'
+        id='name'
+        name='name'
+        {{!-- value='{{name}}' --}}
+      />
 
-  </div>
+    </div>
 
-  <div class='pb-3'>
-    <label for='age' class='form-age'>Age</label>
-    <input
-      type='text'
-      class='form-control'
-      id='age'
-      name='age'
-      {{!-- value='{{age}}' --}}
-    />
+    <div class='pb-3'>
+      <label for='age' class='form-age'>Age</label>
+      <input
+        type='text'
+        class='form-control'
+        id='age'
+        name='age'
+        {{!-- value='{{age}}' --}}
+      />
 
-  </div>
+    </div>
 
-  <div class='pb-3'>
-    <label for='sex' class='form-sex'>Sex</label>
-    <input
-      type='text'
-      class='form-control'
-      id='sex'
-      name='sex'
-      {{!-- value='{{sex}}' --}}
-    />
+    <div class='pb-3'>
+      <label for='sex' class='form-sex'>Sex</label>
+      <input
+        type='text'
+        class='form-control'
+        id='sex'
+        name='sex'
+        {{!-- value='{{sex}}' --}}
+      />
 
-  </div>
+    </div>
 
-  <div class='pb-3'>
-    <label for='address' class='form-label'>address</label>
-    <input
-      type='text'
-      class='form-control'
-      id='address'
-      name='address'
-      {{!-- value='{{address}}' --}}
-    />
+    <div class='pb-3'>
+      <label for='address' class='form-label'>address</label>
+      <input
+        type='text'
+        class='form-control'
+        id='address'
+        name='address'
+        {{!-- value='{{address}}' --}}
+      />
 
-  </div>
+    </div>
 
-  <button type='submit' class='btn btn-primary'>Save</button>
-</form>
+    <button type='submit' class='btn btn-primary'>Save</button>
+  </form>
+</container>

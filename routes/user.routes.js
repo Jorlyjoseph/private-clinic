@@ -86,7 +86,7 @@ router.post('/user/login', (request, response) => {
       return;
     } else if (bcryptjs.compareSync(password, user.password)) {
       request.session.currentUser = user;
-      response.redirect('/user/profile');
+      response.redirect('/user/index');
       return;
     } else {
       response.render('user/login', {
@@ -97,13 +97,13 @@ router.post('/user/login', (request, response) => {
   });
 });
 
-router.get('/user/profile', (request, response) => {
+router.get('/user/index', (request, response) => {
   if (!request.session.currentUser) {
     response.redirect('/user/login');
     return;
   }
 
-  response.render('user/profile.hbs', {
+  response.render('user/index.hbs', {
     userName: request.session.currentUser.username
   });
 });

@@ -1,3 +1,4 @@
+
 // ℹ️ Gets access to environment variables/settings
 // https://www.npmjs.com/package/dotenv
 require("dotenv/config");
@@ -24,7 +25,7 @@ const projectName = "clinic";
 const capitalized = (string) =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Natural Pharmacy`;
+app.locals.title = `${capitalized(projectName)}- Private-Clinic`;
 
 // 👇 Start handling routes here
 const index = require("./routes/index");

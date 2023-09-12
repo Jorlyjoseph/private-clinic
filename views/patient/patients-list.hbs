@@ -1,13 +1,23 @@
-<h1>all the patients shows here...</h1>
+<h1>Patients</h1>
 
-{{#each patients}}
-  <div>
-    <div>{{name}}</div>
-    <div>{{age}}</div>
-    <div>{{sex}}</div>
-    <div>{{_id}}</div>
-    <a href='/patient/{{_id}}/diagnose'>Diagnose</a>
-  </div>
-  <br />
+<div class='patient-list-container'>
 
-{{/each}}
+  {{#each patients}}<div>
+      <div class='card'>
+        <div class='card-body'>
+          <h5 class='card-title'>{{name}}</h5>
+          <p class='card-text'>{{age}}</p>
+          <p class='card-text'>{{sex}}</p>
+          <p class='card-text'>{{address}}</p>
+          <a
+            href='/patient/{{_id}}/diagnose'
+            class='btn btn-primary'
+          >Diagnose</a>
+          <a href='/patient/{{_id}}/edit' class='btn btn-primary'>edit</a>
+          <a href='/patient/{{_id}}/delete' class='btn btn-primary'>delete</a>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+
+</div>

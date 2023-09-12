@@ -24,7 +24,6 @@ router.get('/patient/all', (request, response, next) => {
   Patient.find()
     .populate()
     .then((patientsFromDB) => {
-      console.log(patientsFromDB);
       response.render('patient/patients-list', { patients: patientsFromDB });
     });
 });
@@ -33,6 +32,27 @@ router.get('/patient/:id/diagnose', (request, response, next) => {
   const { id } = request.params;
   Patient.findById(id).then((data) => {
     response.render('patient/diagnose', { data: data });
+  });
+});
+
+router.get('/patient/:id/edit', (request, response, next) => {
+  const { id } = request.params;
+  Patient.findById(id).then((data) => {
+    response.render('patient/edit', { data: data });
+  });
+});
+
+router.post('/patient/:id/edit', (request, response, next) => {
+  const { id } = request.params;
+  const { name, age, sex, address } = request.body;
+
+  Patient.findByIdAndUpdate(id, {
+    name,
+    age,
+    sex,
+    address
+  }).then(() => {
+    response.redirect('/patient/all');
   });
 });
 

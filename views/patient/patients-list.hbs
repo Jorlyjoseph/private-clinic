@@ -1,1 +1,13 @@
 <h1>all the patients shows here...</h1>
+
+{{#each patients}}
+  <div>
+    <div>{{name}}</div>
+    <div>{{age}}</div>
+    <div>{{sex}}</div>
+    <div>{{_id}}</div>
+    <a href='/patient/{{_id}}/diagnose'>Diagnose</a>
+  </div>
+  <br />
+
+{{/each}}

@@ -14,22 +14,10 @@
             class='btn btn-primary'
           >Diagnose</a>
           <a href='/patient/{{_id}}/edit' class='btn btn-primary'>edit</a>
-          <a href='#' class='btn btn-primary'>delete</a>
+          <a href='/patient/{{_id}}/delete' class='btn btn-primary'>delete</a>
         </div>
       </div>
     </div>
   {{/each}}
 
 </div>
-
-{{!-- {{#each patients}}
-  <div>
-    <div>{{name}}</div>
-    <div>{{age}}</div>
-    <div>{{sex}}</div>
-    <div>{{_id}}</div>
-    <a href='/patient/{{_id}}/diagnose'>Diagnose</a>
-  </div>
-  <br />
-
-{{/each}} --}}

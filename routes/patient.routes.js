@@ -56,4 +56,11 @@ router.post('/patient/:id/edit', (request, response, next) => {
   });
 });
 
+router.get('/patient/:id/delete', (request, response, next) => {
+  const { id } = request.params;
+  Patient.findByIdAndDelete(id).then(() => {
+    response.redirect('/patient/all');
+  });
+});
+
 module.exports = router;

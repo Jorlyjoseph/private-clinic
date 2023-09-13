@@ -93,10 +93,6 @@ router.post('/patient/all', (request, response, next) => {
 
   Patient.find({ name: { $regex: reg } })
     .then((patients) => {
-      if (!patients) {
-        response.status(404).send('Patient not found');
-        return;
-      }
       response.render('patient/patients-list', { patients });
     })
     .catch((error) => {

@@ -15,6 +15,10 @@
   </form>
 </div>
 
+{{#unless patients.length}}
+  <p>No patient found</p>
+{{/unless}}
+
 <div class='patient-list-container'>
 
   {{#each patients}}<div>

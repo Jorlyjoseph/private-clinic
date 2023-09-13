@@ -94,4 +94,27 @@ router.get('/patient/:id/delete', (request, response, next) => {
   });
 });
 
+// router.get('/patient/:id/find', (request, response, next) => {
+//   if (!request.session.currentUser) {
+//     response.redirect('/user/login');
+//     return;
+//   }
+
+//   const { id } = request.params;
+//   Patient.findById(id)
+//     .then((patient) => {
+//       if (!patient) {
+//         response.status(404).send('Patient not found');
+//         return;
+//       }
+//       response.render('patient/found', { patient });
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//       response.status(500).send('Server error');
+//     });
+// });
+
+// Find all users where the name is 'Alice' and select only "name" and "age" fields
+
 module.exports = router;

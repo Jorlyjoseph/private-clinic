@@ -39,18 +39,6 @@ router.get('/patient/all', (request, response, next) => {
     });
 });
 
-router.get('/patient/:id/diagnose', (request, response, next) => {
-  if (!request.session.currentUser) {
-    response.redirect('/user/login');
-    return;
-  }
-
-  const { id } = request.params;
-  Patient.findById(id).then((data) => {
-    response.render('patient/diagnose', { data: data });
-  });
-});
-
 router.get('/patient/:id/edit', (request, response, next) => {
   if (!request.session.currentUser) {
     response.redirect('/user/login');

@@ -4,10 +4,16 @@ const Patient = require('../models/Patient.model.js');
 
 // GET route for the diagnosis
 router.get('/patient/:id/diagnose', (request, response, next) => {
-    console.log('Handling /patient/:id/diagnose request');
-    const { id } = request.params;
-    response.redirect(`/patient/${id}/diagnoses`);
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
+  const { id } = request.params;
+  Patient.findById(id).then((data) => {
+    response.render('patient/diagnose', { data: data });
   });
+});
 
 // GET route for all diagnoses
 router.get('/patient/:id/diagnoses', (request, response, next) => {

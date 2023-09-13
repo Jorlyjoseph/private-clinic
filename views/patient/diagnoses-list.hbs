@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diagnoses List</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Diagnoses List</h1>
+    
+    <!-- Bootstrap Card for Diagnosis List -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Diagnosis History</h5>
+        <ul class="list-group">
+          {{#each patient.diagnosisHistory}}
+            
+            <li class="list-group-item">{{this.date}}: {{this.diagnosis}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Button to Access Diagnosis Form -->
+    <a href="/patient/{{patient._id}}/diagnose" class="btn btn-primary mt-3">Add New Diagnosis</a>
+  </div>
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

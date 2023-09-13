@@ -9,7 +9,7 @@ router.get('/user', (request, response, next) => {
     return;
   }
   response.render('user/index', {
-    userName: request.session.currentUser.username
+    name: request.session.currentUser.name
   });
 });
 

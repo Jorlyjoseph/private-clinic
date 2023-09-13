@@ -1,14 +1,16 @@
+.patient-list-search-container {
+  display: grid;
+  justify-content: end;
+  margin-bottom: 30px;
+}
+
+.patient-list-search {
+  width: 400px;
+}
+
 .patient-list-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-}
-
-.search_button {
-  color: blue;
-}
-
-.container {
-  display: flex;
 }

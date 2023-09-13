@@ -1,5 +1,20 @@
 <h1>Patients</h1>
 
+<div class='patient-list-search-container'>
+
+  <div class='input-group patient-list-search'>
+    <input
+      type='search'
+      class='form-control rounded'
+      placeholder='Search'
+      aria-label='Search'
+      aria-describedby='search-addon'
+      id='search-input'
+    />
+    <button type='button' class='btn btn-outline-primary'>search</button>
+  </div>
+</div>
+
 <div class='patient-list-container'>
 
   {{#each patients}}<div>

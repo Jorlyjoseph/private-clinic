@@ -1,17 +1,19 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
-const patientSchema = new Schema(
-  {
-    name: String,
-    age: Number,
-    sex: String,
-    address: String
-  },
-  {
-    timestamps: true
-  }
-);
+const patientSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  sex: String,
+  address: String,
+ 
+  diagnosisHistory: [
+    {
+      date: Date, 
+      diagnosis: String 
+    }
+  ]
+});
 
-const Patient = model('Patient', patientSchema);
 
-module.exports = Patient;
+
+module.exports = mongoose.model('Patient', patientSchema);

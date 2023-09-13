@@ -9,6 +9,6 @@
   color: blue;
 }
 
-.container{
-  
+.container {
+  display: flex;
 }

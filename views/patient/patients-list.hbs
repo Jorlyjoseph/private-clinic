@@ -1,18 +1,18 @@
 <h1>Patients</h1>
 
 <div class='patient-list-search-container'>
-
-  <div class='input-group patient-list-search'>
-    <input
-      type='search'
-      class='form-control rounded'
-      placeholder='Search'
-      aria-label='Search'
-      aria-describedby='search-addon'
-      id='search-input'
-    />
-    <button type='button' class='btn btn-outline-primary'>search</button>
-  </div>
+  <form action='/patient/all' method='post'>
+    <div class='input-group patient-list-search'>
+      <input
+        type='search'
+        class='form-control rounded'
+        placeholder='Search'
+        id='search-input'
+        name='query'
+      />
+      <button type='submit' class='btn btn-outline-primary'>Search</button>
+    </div>
+  </form>
 </div>
 
 <div class='patient-list-container'>

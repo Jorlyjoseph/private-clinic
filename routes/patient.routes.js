@@ -82,26 +82,27 @@ router.get('/patient/:id/delete', (request, response, next) => {
   });
 });
 
-router.get('/patient/:id/find', (request, response, next) => {
+router.post('/patient/all', (request, response, next) => {
   if (!request.session.currentUser) {
     response.redirect('/user/login');
     return;
   }
 
-  const { id } = request.params;
-  Patient.findById(id)
-    .then((patient) => {
-      if (!patient) {
+  const { query } = request.body;
+  const reg = new RegExp(query, 'i');
+
+  Patient.find({ name: { $regex: reg } })
+    .then((patients) => {
+      if (!patients) {
         response.status(404).send('Patient not found');
         return;
       }
-      response.render('patient/found', { patient });
+      response.render('patient/patients-list', { patients });
     })
     .catch((error) => {
       console.error(error);
       response.status(500).send('Server error');
     });
 });
-
 
 module.exports = router;

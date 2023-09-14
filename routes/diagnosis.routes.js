@@ -67,3 +67,4 @@ router.post('/patient/:id/diagnose', (req, res, next) => {
   });
 
 module.exports = router;
+

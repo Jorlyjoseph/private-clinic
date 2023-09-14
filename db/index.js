@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 
 const MONGO_URI =
-  process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/private-clinic';
+  process.env.MONGODB_URI ||
+  process.env.DATABASE_URL ||
+  'mongodb://127.0.0.1:27017/private-clinic';
+
 mongoose.set('strictQuery', false);
+
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
@@ -12,4 +16,3 @@ mongoose
   .catch((err) => {
     console.error('Error connecting to mongo: ', err);
   });
-  

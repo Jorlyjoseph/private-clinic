@@ -1,42 +1,25 @@
-<container class='index_body'>
-  <h2>Welcome {{userName}}</h2>
+<div class='user-homepage-container'>
+  <h2>Welcome Dr. {{name}}</h2>
 
-  <div class='card text-white bg-info mb-3' style='max-width: 18rem;'>
-    <div class='card-body'>
-      <a href='/patient/register'>
-        patient register</a>
+  <section class='user-homepage-buttons'>
+    <div class='row justify-content-around mb-5'>
+      <div class='col-3'>
+        <a href='/patient/register' class='action-button'>
+          <span>Patient register</span></a>
+      </div>
+
+      <div class='col-3'>
+        <a href='/patient/all' class='action-button'>
+          <span>Patient list</span>
+        </a>
+      </div>
+
+      <div class='col-3'>
+        <a href='/patient/all' class='action-button'>
+          <span>Patient list</span>
+        </a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class='card text-white bg-info mb-3' style='max-width: 18rem;'>
-    <div class='card-body'>
-      <a href='/patient/all'>
-    Patient list
-  </a>
-  </div>
-
-
-<div class="container">
-  <div class="item item-1">Item1</div>
-  <div class="item item-2">Item2</div>
-  <div class="item item-3">Item3</div>
 </div>
-
-
-
-
-  {{!-- <a href='/patient/register'>
-    patient register</a> --}}
-
-  {{! <button>
-  Diagnosis
-</button> }}
-
-  {{!-- <a href='/patient/all'>
-    Patient list
-  </a> --}}
-
-  {{! <button>
-    Doctors
-  </button> }}
-</container>

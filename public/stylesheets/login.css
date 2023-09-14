@@ -1,6 +1,6 @@
 .login-container {
-  height: 70vh;
-  display: grid;
+  height: 50vh;
+  display:flex;
   justify-content: center;
   align-items: center;
   background-color: antiquewhite;

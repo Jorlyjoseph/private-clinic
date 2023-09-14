@@ -1,14 +1,103 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Welcome Doctors</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/register">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
-<div class="container">
-     <h1>{{title}}</h1>
-    <p> We believe that by simplifying the process of visiting the doctor and registering patients, we can enhance the overall healthcare experience and contribute to healthier lives in our communities. 
-Join us with our user-friendly website, on this transformative journey towards a more patient-centric healthcare system. </p>
-    <a href="/user/login" class="btn btn-outline-secondary">Go to login</a>
-    <a href="/user/register" class="btn btn-outline-secondary">Go to register</a>
-</div>
+    <!-- Main Content Container -->
+    <div class="container mt-5">
+        <h1 class="display-2"> Hydroclin</h1>
+        <p>We believe that by simplifying the process of visiting the doctor and registering patients, we can enhance the overall healthcare experience and contribute to healthier lives in our communities. Join us with our user-friendly website, on this transformative journey towards a more patient-centric healthcare system.</p>
+       
+    </div>
+  <!-- 
+<footer class="bg-dark text-white py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Contact Information</h4>
+                <p>123 Main Street</p>
+                <p>City, Country</p>
+                <p>Contact: +123-456-7890</p>
+            </div>
+            <div class="col-md-6">
+                <h4>Location</h4>
+                
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+</footer> -->
+<!-- Add this script tag to the bottom of your HTML, just before </body> -->
+<!--<script>
+    function initMap() {
+        // Create a location object with latitude and longitude
+        var location = { lat: 12.9716, lng: 77.5946 }; // Replace with your desired coordinates
+
+        // Create a map centered at the location
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location
+        });
+
+        // Create a marker at the location
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    }
+</script> 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
 
 
-<div class="container bg-light">
-   
-</div>
+-->
+
+
+
+
+    <!-- Include Bootstrap JS and jQuery (at the end of the body) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,5 @@
-<div><nav class='navbar navbar-expand-lg bg-body-tertiary'>
+<div>
+  <nav class='navbar navbar-expand-lg bg-body-tertiary'>
     <div class='container-fluid'>
       <a class='navbar-brand display-5' href='#'>Hydroclin</a>
       <button
@@ -30,16 +31,18 @@
     </div>
   </nav>
 </div>
-<container class="pt-reg-pg custom-container"  style= " background-color:#1b263b ">
 
-  <h3>new patients registration form</h3>
-  <form class='patients-register-form' style="color:#e0e1dd" action='/patient/register' method='post'>
+<div class='pt-reg-pg patients-register-container'>
+
+  <h3>Registration form </h3>
+
+  <form class='patients-register-form' action='/patient/register' method='post'>
     {{#if errorMessage}}
       <p class='error'>{{errorMessage}}</p>
     {{/if}}
 
     <div class='pb-3'>
-      <label for='name' class='form-name' style="color:#e0e1dd">Name</label>
+      <label for='name' class='form-label'>Name</label>
       <input
         type='text'
         class='form-control'
@@ -51,7 +54,7 @@
     </div>
 
     <div class='pb-3'>
-      <label for='age' class='form-age' style="color:#e0e1dd">Age</label>
+      <label for='age' class='form-label'>Age</label>
       <input
         type='text'
         class='form-control'
@@ -63,19 +66,13 @@
     </div>
 
     <div class='pb-3'>
-      <label for='sex' class='form-sex'style="color:#e0e1dd">Sex</label>
-      <input
-        type='text'
-        class='form-control'
-        id='sex'
-        name='sex'
-        {{!-- value='{{sex}}' --}}
-      />
+      <label for='sex' class='form-label'>Sex</label>
+      <input type='text' class='form-control' id='sex' name='sex' />
 
     </div>
 
     <div class='pb-3'>
-      <label for='address' class='form-label'style="color:#e0e1dd">address</label>
+      <label for='address' class='form-label'>address</label>
       <input
         type='text'
         class='form-control'
@@ -88,4 +85,4 @@
 
     <button type='submit' class='btn btn-secondary'>Save</button>
   </form>
-</container>
+</div>

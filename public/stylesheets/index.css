@@ -19,13 +19,3 @@
   font-family: 'Monaco', monospace;
   color: #1b263b;
 }
-
-.custom-container {
-  width: 80%;
-  max-width: 600px;
-  height: 400px;
-  margin: 0 auto; /* Center horizontally */
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;
-}

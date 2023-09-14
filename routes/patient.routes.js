@@ -94,4 +94,23 @@ router.get('/patient/:id/delete', (request, response, next) => {
   });
 });
 
+router.post('/patient/all', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
+  const { query } = request.body;
+  const reg = new RegExp(query, 'i');
+
+  Patient.find({ name: { $regex: reg } })
+    .then((patients) => {
+      response.render('patient/patients-list', { patients });
+    })
+    .catch((error) => {
+      console.error(error);
+      response.status(500).send('Server error');
+    });
+});
+
 module.exports = router;

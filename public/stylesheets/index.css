@@ -5,8 +5,14 @@
 .action-button {
   display: flex;
   height: 300px;
-  background-color: #cecece;
-  border-radius: 10px;
+  background-color: #9a8989;
+  border-radius: 100px;
   align-items: center;
   justify-content: center;
+}
+
+.logout-button {
+  border-color: red;
+  display: flex;
+  justify-content: right;
 }

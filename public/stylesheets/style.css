@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
 }
 
 .error {
@@ -8,9 +8,9 @@ body {
 }
 
 a {
-  color: #a44578;
+  color: #a245a4;
   text-decoration: none;
-  font-size: 1.4em;
+  font-size: 2.4em;
   margin: auto;
 }
 
@@ -34,5 +34,3 @@ a {
   max-width: auto;
   height: 90%;
 }
-
-

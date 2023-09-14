@@ -1,6 +1,35 @@
+<div><nav class='navbar navbar-expand-lg bg-body-tertiary'>
+    <div class='container-fluid'>
+      <a class='navbar-brand display-5' href='#'>Hydro-clinic</a>
+      <button
+        class='navbar-toggler'
+        type='button'
+        data-bs-toggle='collapse'
+        data-bs-target='#navbarNavAltMarkup'
+        aria-controls='navbarNavAltMarkup'
+        aria-expanded='false'
+        aria-label='Toggle navigation'
+      >
+        <span class='navbar-toggler-icon'></span>
+      </button>
+      <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
+        <div class='navbar-nav'>
+          <a class='nav-link active' aria-current='page' href='/'>Home</a>
+        </div>
+        <div class='ms-auto'>
+          <a
+            class='nav-link active'
+            aria-current='page'
+            href='/user/logout'
+          >Sign Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
 <container class='pt-reg-pg'>
   <h2>new patients registration form</h2>
-
   <form class='patients-register-form' action='/patient/register' method='post'>
     {{#if errorMessage}}
       <p class='error'>{{errorMessage}}</p>

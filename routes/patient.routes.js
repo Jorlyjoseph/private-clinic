@@ -39,6 +39,18 @@ router.get('/patient/all', (request, response, next) => {
     });
 });
 
+router.get('/patient/:id/diagnose', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
+  const { id } = request.params;
+  Patient.findById(id).then((data) => {
+    response.render('patient/diagnose', { data: data });
+  });
+});
+
 router.get('/patient/:id/edit', (request, response, next) => {
   if (!request.session.currentUser) {
     response.redirect('/user/login');
@@ -80,25 +92,6 @@ router.get('/patient/:id/delete', (request, response, next) => {
   Patient.findByIdAndDelete(id).then(() => {
     response.redirect('/patient/all');
   });
-});
-
-router.post('/patient/all', (request, response, next) => {
-  if (!request.session.currentUser) {
-    response.redirect('/user/login');
-    return;
-  }
-
-  const { query } = request.body;
-  const reg = new RegExp(query, 'i');
-
-  Patient.find({ name: { $regex: reg } })
-    .then((patients) => {
-      response.render('patient/patients-list', { patients });
-    })
-    .catch((error) => {
-      console.error(error);
-      response.status(500).send('Server error');
-    });
 });
 
 module.exports = router;

@@ -21,11 +21,11 @@ require('./config')(app);
 require('./config/session.config')(app);
 
 // default value for title local
-const projectName = 'clinic';
+const projectName = 'Hydroclin';
 const capitalized = (string) =>
   string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)}- Hydro-clinic`;
+app.locals.title = `${capitalized(projectName)}- Hydroclin`;
 
 // 👇 Start handling routes here
 const index = require('./routes/index');

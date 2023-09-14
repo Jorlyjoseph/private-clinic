@@ -8,9 +8,14 @@
   width: 400px;
 }
 
-.patient-list-container {
+.patient-list-container  {
+
+  
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+  width: 1000px;
+  height: 500px;
 }
+

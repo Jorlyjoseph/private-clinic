@@ -1,35 +1,27 @@
 <div class='user-homepage-container'>
-  <div><nav class='navbar navbar-expand-lg bg-body-tertiary'>
-      <div class='container-fluid'>
-        <a class='navbar-brand display-5' href='#'>Hydro-clinic</a>
-        <button
-          class='navbar-toggler'
-          type='button'
-          data-bs-toggle='collapse'
-          data-bs-target='#navbarNavAltMarkup'
-          aria-controls='navbarNavAltMarkup'
-          aria-expanded='false'
-          aria-label='Toggle navigation'
-        >
-          <span class='navbar-toggler-icon'></span>
-        </button>
-        <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
-          <div class='navbar-nav'>
-            <a class='nav-link active' aria-current='page' href='/'>Home</a>
-          </div>
-          <div class='ms-auto'>
-            <a
-              class='nav-link active'
-              aria-current='page'
-              href='/user/logout'
-            >Sign Out</a>
-          </div>
+
+  <nav class='navbar navbar-expand-lg bg-body-tertiary'>
+    <div class='container-fluid'>
+      <a class='navbar-brand display-5' href='#'>Hydroclin</a>
+      <button class='navbar-toggler' type='button'>
+        <span class='navbar-toggler-icon'></span>
+      </button>
+      <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
+        <div class='navbar-nav'>
+          <a class='nav-link active' aria-current='page' href='/'>Home</a>
+        </div>
+        <div class='ms-auto'>
+          <a
+            class='nav-link active'
+            aria-current='page'
+            href='/user/logout'
+          >Sign Out</a>
         </div>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
 
-  <h2>Welcome Dr. {{name}}</h2>
+  <h2 class='user-homepage-header'>Welcome Dr. {{name}}</h2>
 
   <section class='user-homepage-buttons'>
     <div class='row justify-content-around mb-5'>
@@ -48,6 +40,3 @@
   </section>
 
 </div>
-
-
-

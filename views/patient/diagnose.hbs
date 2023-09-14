@@ -1,4 +1,6 @@
-
+<!-- diagnose.hbs -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Diagnose Page for: {{data.name}}</title>
@@ -10,10 +12,6 @@
     
     
     <h1>Diagnose Page for: {{data.name}}</h1>
-
-
-     <!-- Diagnosis lista -->
-   <a href="/patient/{{data._id}}/diagnoses" class="btn btn-secondary">View Diagnoses List</a>
 
     <!-- Diagnosis Form -->
     <form action="/patient/{{data._id}}/diagnose" method="POST">
@@ -31,6 +29,11 @@
       <button type="submit" class="btn btn-primary">Submit Diagnosis</button>
     </form>
 
+     <!-- Diagnosis lista -->
+    <a href="/patient/{{data._id}}/diagnoses" class="btn btn-secondary">View Diagnoses List</a>
+  </div>
 
 
-  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

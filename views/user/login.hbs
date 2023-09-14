@@ -1,27 +1,6 @@
-<div><nav class='navbar navbar-expand-lg bg-body-tertiary'>
-    <div class='container-fluid'>
-      <a class='navbar-brand display-5' href='#'>Hydro-clinic</a>
-      <button
-        class='navbar-toggler'
-        type='button'
-        data-bs-toggle='collapse'
-        data-bs-target='#navbarNavAltMarkup'
-        aria-controls='navbarNavAltMarkup'
-        aria-expanded='false'
-        aria-label='Toggle navigation'
-      >
-        <span class='navbar-toggler-icon'></span>
-      </button>
-      <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>
-        <div class='navbar-nav'>
-          <a class='nav-link active' aria-current='page' href='/'>Home</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-</div>
 
-<div class='login-container'>
+
+
   <form class='login-register-form' action='/user/login' method='post'>
     {{#if errorMessage}}
       <p class='error'>{{errorMessage}}</p>
@@ -40,7 +19,7 @@
         <p class='error'>{{userNameError}}</p>
       {{/if}}
 
-    </div>
+    
 
     <div class='mb-3'>
       <label for='password' class='form-label'>Password</label>
@@ -55,7 +34,7 @@
       {{/if}}
     </div>
 
-    <button type='submit' class='btn btn-primary'>login</button>
+    <button type='submit' class='btn btn-secondary'>login</button>
     {{! <div class="registerlink">
       <a href="/user/register">Register </a>
     </div> }}

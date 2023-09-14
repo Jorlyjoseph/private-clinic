@@ -1,54 +1,57 @@
-<ul class='nav justify-content-end'>
-  <li class='nav-item ms-auto'>
-    <a class='nav-link active' aria-current='page' href='#'>Hydro clinic</a>
-  </li>
-  <li class='nav-item'>
-    <a class='nav-link' href='/user'>Back</a>
-  </li>
-  <li class='nav-item'>
-    <a class='nav-link' href='/'>Home</a>
-  </li>
-</ul>
+<div class="patients-list-container">
 
-<h1>Patients</h1>
+  <ul class='nav justify-content-end'>
+    <li class='nav-item ms-auto'>
+      <a class='nav-link active' aria-current='page' href='#'>Hydro clinic</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/user'>Back</a>
+    </li>
+    <li class='nav-item'>
+      <a class='nav-link' href='/'>Home</a>
+    </li>
+  </ul>
 
-<div class='patient-list-search-container'>
-  <form action='/patient/all' method='post'>
-    <div class='input-group patient-list-search'>
-      <input
-        type='search'
-        class='form-control rounded'
-        placeholder='Search'
-        id='search-input'
-        name='query'
-      />
-      <button type='submit' class='btn btn-outline-primary'>Search</button>
-    </div>
-  </form>
-</div>
+  <h1>Patients</h1>
 
-{{#unless patients.length}}
-  <p>No patient found</p>
-{{/unless}}
+  <div class='patient-list-search-container'>
+    <form action='/patient/all' method='post'>
+      <div class='input-group patient-list-search'>
+        <input
+          type='search'
+          class='form-control rounded'
+          placeholder='Search'
+          id='search-input'
+          name='query'
+        />
+        <button type='submit' class='btn btn-outline-primary'>Search</button>
+      </div>
+    </form>
+  </div>
 
-<div class='patient-list-container'>
+  {{#unless patients.length}}
+    <p>No patient found</p>
+  {{/unless}}
 
-  {{#each patients}}<div>
-      <div class='card'>
-        <div class='card-body'>
-          <h5 class='card-title'>{{name}}</h5>
-          <p class='card-text'>{{age}}</p>
-          <p class='card-text'>{{sex}}</p>
-          <p class='card-text'>{{address}}</p>
-          <a
-            href='/patient/{{_id}}/diagnoses'
-            class='btn btn-primary'
-          >Diagnose</a>
-          <a href='/patient/{{_id}}/edit' class='btn btn-primary'>edit</a>
-          <a href='/patient/{{_id}}/delete' class='btn btn-primary'>delete</a>
+  <div class='patient-list-container'>
+
+    {{#each patients}}<div>
+        <div class='card'>
+          <div class='card-body'>
+            <h5 class='card-title'>{{name}}</h5>
+            <p class='card-text'>{{age}}</p>
+            <p class='card-text'>{{sex}}</p>
+            <p class='card-text'>{{address}}</p>
+            <a
+              href='/patient/{{_id}}/diagnoses'
+              class='btn btn-primary'
+            >Diagnose</a>
+            <a href='/patient/{{_id}}/edit' class='btn btn-primary'>edit</a>
+            <a href='/patient/{{_id}}/delete' class='btn btn-primary'>delete</a>
+          </div>
         </div>
       </div>
-    </div>
-  {{/each}}
+    {{/each}}
 
+  </div>
 </div>

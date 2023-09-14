@@ -1,3 +1,7 @@
+.patients-list-container {
+  background-color: beige;
+}
+
 .patient-list-search-container {
   display: grid;
   justify-content: end;

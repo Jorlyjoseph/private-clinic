@@ -32,11 +32,9 @@ router.get('/patient/all', (request, response, next) => {
     return;
   }
 
-  Patient.find()
-    .populate()
-    .then((patientsFromDB) => {
-      response.render('patient/patients-list', { patients: patientsFromDB });
-    });
+  Patient.find().then((patientsFromDB) => {
+    response.render('patient/patients-list', { patients: patientsFromDB });
+  });
 });
 
 router.get('/patient/:id/diagnose', (request, response, next) => {

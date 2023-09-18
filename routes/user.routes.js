@@ -51,7 +51,7 @@ router.post('/user/register', (request, response) => {
       })
       .catch((err) => {
         if (err.code === 11000) {
-          // duplicate mongo code
+          // duplicate mongo code username and email need to be unique .Either username or email is allrady used
           response.render('user/register.hbs', {
             errorMessage: 'username already exists',
             username: username

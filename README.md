@@ -81,4 +81,4 @@ Link: https://docs.google.com/presentation/d/1ZDc7Utksg3hHqQiTD7vlPXN5EfcMSo-tXe
 
 ## Deploy
 
-Link : https://private-clinic.adaptable.app/
+Link : https://hydroclinic.adaptable.app/

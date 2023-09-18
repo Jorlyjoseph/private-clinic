@@ -32,11 +32,9 @@ router.get('/patient/all', (request, response, next) => {
     return;
   }
 
-  Patient.find()
-    .populate()
-    .then((patientsFromDB) => {
-      response.render('patient/patients-list', { patients: patientsFromDB });
-    });
+  Patient.find().then((patientsFromDB) => {
+    response.render('patient/patients-list', { patients: patientsFromDB });
+  });
 });
 
 router.get('/patient/:id/diagnose', (request, response, next) => {
@@ -92,6 +90,25 @@ router.get('/patient/:id/delete', (request, response, next) => {
   Patient.findByIdAndDelete(id).then(() => {
     response.redirect('/patient/all');
   });
+});
+
+router.post('/patient/all', (request, response, next) => {
+  if (!request.session.currentUser) {
+    response.redirect('/user/login');
+    return;
+  }
+
+  const { query } = request.body;
+  const reg = new RegExp(query, 'i');
+
+  Patient.find({ name: { $regex: reg } })
+    .then((patients) => {
+      response.render('patient/patients-list', { patients });
+    })
+    .catch((error) => {
+      console.error(error);
+      response.status(500).send('Server error');
+    });
 });
 
 module.exports = router;

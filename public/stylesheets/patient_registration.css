@@ -1,7 +1,20 @@
-.pt-reg-pg {
-  height: 90vh;
+.patients-register-container {
+  width: max-content;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: rgb(227, 224, 221);
   display: grid;
   justify-content: center;
   align-items: center;
-  background-color: rgb(247, 213, 170);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.patients-register-form {
+  margin-top: 30px;
+  min-width: 400px;
+}
+
+.form-label {
+  color: #000;
 }

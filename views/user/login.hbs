@@ -1,6 +1,4 @@
-
-
-
+<div class='login-container'>
   <form class='login-register-form' action='/user/login' method='post'>
     {{#if errorMessage}}
       <p class='error'>{{errorMessage}}</p>
@@ -18,8 +16,7 @@
       {{#if userNameError}}
         <p class='error'>{{userNameError}}</p>
       {{/if}}
-
-    
+    </div>
 
     <div class='mb-3'>
       <label for='password' class='form-label'>Password</label>

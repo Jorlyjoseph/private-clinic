@@ -1,4 +1,4 @@
-
+<div class='login-container'>
   <form class='login-register-form' action='/user/register' method='post'>
     {{#if errorMessage}}
       <p class='error'>{{errorMessage}}</p>
@@ -13,8 +13,7 @@
         name='name'
         value='{{name}}'
       />
-
-  
+    </div>
 
     <div class='pb-3'>
       <label for='username' class='form-label'>User Name</label>
@@ -28,7 +27,6 @@
       {{#if userNameError}}
         <p class='error'>{{userNameError}}</p>
       {{/if}}
-
     </div>
 
     <div class='mb-3'>
@@ -44,6 +42,9 @@
       {{/if}}
     </div>
 
-    <button type='submit' class='btn btn-secondary'>Register</button>
+    <button type='submit' class='btn btn-primary'>login</button>
+    {{! <div class="registerlink">
+      <a href="/user/register">Register </a>
+    </div> }}
   </form>
 </div>
